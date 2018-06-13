@@ -1,2 +1,4 @@
 # fpkg-template
-A Cookiecutter template for creating FME Packages.
+
+[Cookiecutter](https://cookiecutter.readthedocs.io) template
+for creating FME Packages.

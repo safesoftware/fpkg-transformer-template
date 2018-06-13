@@ -1,0 +1,9 @@
+{
+    "package_uid": "my-package",
+    "publisher_uid": "example",
+    "package_name": "My FME Package",
+    "package_description": "A short description of my FME Package.",
+    "author": "G Raymond",
+    "author_email": "me@example.com",
+    "transformer_name": "Foobar"
+}

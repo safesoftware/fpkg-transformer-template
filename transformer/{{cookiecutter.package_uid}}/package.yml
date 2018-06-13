@@ -1,0 +1,14 @@
+fpkg_version: 1
+uid: {{cookiecutter.package_uid}}
+publisher_uid: {{cookiecutter.publisher_uid}}
+name: {{cookiecutter.package_name}}
+description: {{cookiecutter.package_description}}
+version: 0.1.0
+minimum_fme_build: 18482
+author: 
+  name: {{cookiecutter.author}}
+  email: {{cookiecutter.author_email}}
+package_content:
+  transformers:
+    - name: {{cookiecutter.transformer_name}}
+      version: 1
