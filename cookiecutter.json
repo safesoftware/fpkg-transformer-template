@@ -5,5 +5,25 @@
     "package_description": "A short description of my FME Package.",
     "author": "G Raymond",
     "author_email": "me@example.com",
-    "transformer_name": "Foobar"
+    "transformer_category": [
+        "Integrations",
+        "Web",
+        "Workflows",
+        "Attributes",
+        "Calculated Values",
+        "Cartography and Reports",
+        "Coordinates",
+        "Data Quality",
+        "Filters and Joins",
+        "Format Specific",
+        "Geometries",
+        "Point Clouds",
+        "Rasters",
+        "Spatial Analysis",
+        "Strings",
+        "3D"
+    ],
+    "transformer_name": "Foobar",
+    "python_module": "fmepy_{{cookiecutter.transformer_name|lower}}",
+    "python_class_in_module": "{{cookiecutter.transformer_name|lower}}"
 }
