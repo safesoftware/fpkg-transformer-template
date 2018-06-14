@@ -45,7 +45,7 @@ FACTORY_DEF * PythonFactory
     FACTORY_NAME $(XFORMER_NAME)_CALLER
     INPUT FEATURE_TYPE $(XFORMER_NAME)_READY
     PYTHON_NAMESPACE FMEOBJECTS
-    SYMBOL_NAME {{cookiecutter.python_module}}.{{cookiecutter.python_class}}
+    SYMBOL_NAME {{cookiecutter.python_module}}.{{cookiecutter.transformer_name}}
     OUTPUT PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_PROCESSED
 
 FACTORY_DEF * TestFactory

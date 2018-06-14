@@ -1,1 +1,2 @@
 # {{cookiecutter.transformer_name}} transformer messages
+# 000000,{{cookiecutter.transformer_name}}: Hello, '%0'!
