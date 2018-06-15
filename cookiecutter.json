@@ -24,6 +24,6 @@
         "Strings",
         "3D"
     ],
-    "transformer_name": "Foobar",
+    "transformer_name": "MyGreeter",
     "python_module": "fmepy_{{cookiecutter.transformer_name|lower}}"
 }

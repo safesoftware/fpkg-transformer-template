@@ -5,6 +5,7 @@ Python implementation.
 The Python package's setup.py is configured such that 
 the Python code for the transformer must be entirely in this file.
 """
+from __future__ import print_function, absolute_import, division
 # The code in this file must be compatible with both Python 2 and 3.
 # FME includes the 'six' library for this purpose.
 # import six
