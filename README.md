@@ -19,3 +19,4 @@ $ cookiecutter http://gtb-1.safe.internal/clam/fpkg-transformer-template.git
 ```
 
 You'll be prompted to enter a series of values to fill in the template.
+`cookiecutter.json` contains all the things you'll be asked.

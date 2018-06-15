@@ -11,7 +11,7 @@ setup(
     description='Python for the {{cookiecutter.transformer_name}} transformer in FME',
     long_description=readme,
     author='{{cookiecutter.author}}',
-    author_email='{{cookiecutter.author_name}}',
+    author_email='{{cookiecutter.author_email}}',
     url='{{cookiecutter.fme_hub_url}}',
     install_requires=[
     ],
