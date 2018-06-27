@@ -14,6 +14,7 @@ def print2(msg):
     failed = True
 
 
+# UID pattern from FME Packages Specification.
 UID_PATTERN = r'^[a-z0-9](?!.*--)[a-z0-9-]{1,30}[a-z0-9]$'
 if not re.match(UID_PATTERN, '{{cookiecutter.publisher_uid}}'):
     print2('Publisher UID needs to match ' + UID_PATTERN)
