@@ -27,6 +27,11 @@ if not re.match(TRANSFORMER_PATTERN, '{{cookiecutter.transformer_name}}'):
     print2('Transformer name needs to match ' + TRANSFORMER_PATTERN)
 
 
+PYTHON_MODULE_PATTERN = r'^[A-Za-z0-9_]$'
+if not re.match(PYTHON_MODULE_PATTERN, '{{cookiecutter.python_module}}'):
+    print2('Python module name needs to match ' + PYTHON_MODULE_PATTERN)
+
+
 if failed:
     print('Failed validation')
     sys.exit(1)
