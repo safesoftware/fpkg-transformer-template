@@ -1,5 +1,7 @@
 # {{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}.{{cookiecutter.transformer_name}}
 
+_This doc appears when the transformer is selected in the Workbench Quick Add pane._
+
 The {{cookiecutter.transformer_name}} transformer takes a first name as input,
 and outputs a greeting for that person.
 
