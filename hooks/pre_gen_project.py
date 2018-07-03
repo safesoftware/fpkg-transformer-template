@@ -10,8 +10,9 @@ failed = False
 
 
 def print2(msg):
-    print(msg)
+    global failed
     failed = True
+    print(msg)
 
 
 # UID pattern from FME Packages Specification.
@@ -22,12 +23,12 @@ if not re.match(UID_PATTERN, '{{cookiecutter.package_uid}}'):
     print2('Package UID needs to match ' + UID_PATTERN)
 
 
-TRANSFORMER_PATTERN = r'^[A-Za-z0-9]$'
+TRANSFORMER_PATTERN = r'^[A-Za-z0-9]+$'
 if not re.match(TRANSFORMER_PATTERN, '{{cookiecutter.transformer_name}}'):
     print2('Transformer name needs to match ' + TRANSFORMER_PATTERN)
 
 
-PYTHON_MODULE_PATTERN = r'^[A-Za-z0-9_]$'
+PYTHON_MODULE_PATTERN = r'^[A-Za-z0-9_]+$'
 if not re.match(PYTHON_MODULE_PATTERN, '{{cookiecutter.python_module}}'):
     print2('Python module name needs to match ' + PYTHON_MODULE_PATTERN)
 
