@@ -1,4 +1,4 @@
-# {{cookiecutter.transformer_name}}
+# {{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}.{{cookiecutter.transformer_name}}
 
 The {{cookiecutter.transformer_name}} transformer takes a first name as input,
 and outputs a greeting for that person.
