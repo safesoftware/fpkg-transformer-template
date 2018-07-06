@@ -1,2 +1,3 @@
-# {{cookiecutter.transformer_name}} transformer messages
-# 000000,{{cookiecutter.transformer_name}}: Hello, '%0'!
+// {{cookiecutter.transformer_name}} transformer messages
+// FOR SAFE INTERNAL USE ONLY
+// 000000,{{cookiecutter.transformer_name}}: Hello, '%0'!
