@@ -8,6 +8,7 @@ with open("README.md", encoding="utf-8") as readme_file:
 setup(
     name="{{cookiecutter.python_module}}",
     py_modules=["{{cookiecutter.python_module}}"],
+    packages=find_packages(),
     version="0.1.0",
     description="Code for the {{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}.{{cookiecutter.transformer_name}} transformer in FME",
     long_description=readme,
