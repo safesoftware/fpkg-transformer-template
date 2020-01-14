@@ -1,4 +1,4 @@
-# {{cookiecutter.transformer_name}} transformer - Python code
+# {{cookiecutter.python_module}}
 
 This is a Python package containing the code for the {{cookiecutter.transformer_name}} transformer.
 It belongs to the [{{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}} package on FME Hub]({{cookiecutter.fme_hub_url}}).

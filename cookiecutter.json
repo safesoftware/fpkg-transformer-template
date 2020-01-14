@@ -1,7 +1,7 @@
 {
     "package_uid": "my-package",
     "publisher_uid": "example",
-    "fme_hub_url": "https://hub.fme.co/packages/{{cookiecutter.publisher_uid}}/{{cookiecutter.package_uid}}",
+    "fme_hub_url": "https://hub.fme.co/publishers/{{cookiecutter.publisher_uid}}/packages/{{cookiecutter.package_uid}}",
     "package_name": "My FME Package",
     "package_description": "A short description of my FME Package.",
     "author": "G Raymond",
@@ -25,5 +25,7 @@
         "3D"
     ],
     "transformer_name": "MyGreeter",
-    "python_module": "fmepy_{{cookiecutter.transformer_name|lower}}"
+    "transformer_file_name": "{{cookiecutter.transformer_name|lower}}",
+    "python_module": "fmepy_{{cookiecutter.transformer_file_name}}",
+    "python_third_party_imports": ""
 }
