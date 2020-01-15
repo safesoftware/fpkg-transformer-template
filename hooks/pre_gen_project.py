@@ -24,11 +24,19 @@ TRANSFORMER_PATTERN = r'^[A-Za-z0-9]+$'
 failed &= validate_parameter('Transformer name', TRANSFORMER_PATTERN,
                              '{{cookiecutter.transformer_name}}')
 
+TRANSFORMER_FILE_NAME_PATTERN = r'^[a-z0-9_]+$'
+failed &= validate_parameter('Transformer file name', TRANSFORMER_FILE_NAME_PATTERN,
+                             '{{cookiecutter.transformer_file_name}}')
 
 PYTHON_MODULE_PATTERN = r'^[A-Za-z0-9_]+$'
 failed &= validate_parameter('Python module name', PYTHON_MODULE_PATTERN,
                              '{{cookiecutter.python_module}}')
 
+HUB_URL_PATTERN = r'^(https?:\/\/)?[\da-z\.-]+\.[a-z\.]{2,6}[[\/\w \.-]*]*\/?$'
+failed &= validate_parameter('FME Hub URL', HUB_URL_PATTERN, '{{cookiecutter.fme_hub_url}}')
+
+AUTHOR_EMAIL_PATTERN = r'^[^@]+@[\da-z\.-]+\.[a-z\.]{2,6}$'
+failed &= validate_parameter('Author email', AUTHOR_EMAIL_PATTERN, '{{cookiecutter.author_email}}')
 
 if failed:
     print('Failed validation')
