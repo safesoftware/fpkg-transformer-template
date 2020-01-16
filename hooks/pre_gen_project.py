@@ -13,31 +13,31 @@ def validate_parameter(parameter, regex_pattern, parameter_value):
     return True
 
 
-failed = False
+valid = True
 
 # UID pattern from FME Packages Specification.
 UID_PATTERN = r'^[a-z0-9](?!.*--)[a-z0-9-]{1,30}[a-z0-9]$'
-failed &= validate_parameter('Package UID', UID_PATTERN, '{{cookiecutter.package_uid}}')
-failed &= validate_parameter('Publisher UID', UID_PATTERN, '{{cookiecutter.publisher_uid}}')
+valid &= validate_parameter('Package UID', UID_PATTERN, '{{cookiecutter.package_uid}}')
+valid &= validate_parameter('Publisher UID', UID_PATTERN, '{{cookiecutter.publisher_uid}}')
 
 TRANSFORMER_PATTERN = r'^[A-Za-z0-9]+$'
-failed &= validate_parameter('Transformer name', TRANSFORMER_PATTERN,
-                             '{{cookiecutter.transformer_name}}')
+valid &= validate_parameter('Transformer name', TRANSFORMER_PATTERN,
+                            '{{cookiecutter.transformer_name}}')
 
 TRANSFORMER_FILE_NAME_PATTERN = r'^[a-z0-9_]+$'
-failed &= validate_parameter('Transformer file name', TRANSFORMER_FILE_NAME_PATTERN,
-                             '{{cookiecutter.transformer_file_name}}')
+valid &= validate_parameter('Transformer file name', TRANSFORMER_FILE_NAME_PATTERN,
+                            '{{cookiecutter.transformer_file_name}}')
 
 PYTHON_MODULE_PATTERN = r'^[A-Za-z0-9_]+$'
-failed &= validate_parameter('Python module name', PYTHON_MODULE_PATTERN,
-                             '{{cookiecutter.python_module}}')
+valid &= validate_parameter('Python module name', PYTHON_MODULE_PATTERN,
+                            '{{cookiecutter.python_module}}')
 
-HUB_URL_PATTERN = r'^(https?:\/\/)?[\da-z\.-]+\.[a-z\.]{2,6}[[\/\w \.-]*]*\/?$'
-failed &= validate_parameter('FME Hub URL', HUB_URL_PATTERN, '{{cookiecutter.fme_hub_url}}')
+HUB_URL_PATTERN = r'^(https?:\/\/)?[\da-z\.-]+\.[a-z\.]{2,6}[\/\w \.-]*\/?$'
+valid &= validate_parameter('FME Hub URL', HUB_URL_PATTERN, '{{cookiecutter.fme_hub_url}}')
 
 AUTHOR_EMAIL_PATTERN = r'^[^@]+@[\da-z\.-]+\.[a-z\.]{2,6}$'
-failed &= validate_parameter('Author email', AUTHOR_EMAIL_PATTERN, '{{cookiecutter.author_email}}')
+valid &= validate_parameter('Author email', AUTHOR_EMAIL_PATTERN, '{{cookiecutter.author_email}}')
 
-if failed:
+if not valid:
     print('Failed validation')
     sys.exit(1)
