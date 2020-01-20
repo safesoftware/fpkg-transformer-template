@@ -32,7 +32,7 @@ PYTHON_MODULE_PREFIX_PATTERN = r'^[a-z0-9]+$'
 valid &= validate_parameter('Python module prefix', PYTHON_MODULE_PREFIX_PATTERN,
                             '{{cookiecutter.python_module_prefix}}')
 
-PYTHON_PACKAGE_PATTERN = r'^[A-Za-z0-9-_]+$'
+PYTHON_PACKAGE_PATTERN = r'^[A-Za-z0-9-]+$'
 valid &= validate_parameter('Python package name', PYTHON_PACKAGE_PATTERN,
                             '{{cookiecutter.python_package}}')
 
