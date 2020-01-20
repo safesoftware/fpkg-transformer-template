@@ -40,10 +40,7 @@ PYTHON_MODULE_PATTERN = r'^[A-Za-z0-9_]+$'
 valid &= validate_parameter('Python module name', PYTHON_MODULE_PATTERN,
                             '{{cookiecutter.python_module}}')
 
-HUB_URL_PATTERN = r'^(https?:\/\/)?[\da-z\.-]+\.[a-z\.]{2,6}[\/\w \.-]*\/?$'
-valid &= validate_parameter('FME Hub URL', HUB_URL_PATTERN, '{{cookiecutter.fme_hub_url}}')
-
-AUTHOR_EMAIL_PATTERN = r'^[^@]+@[\da-z\.-]+\.[a-z\.]{2,6}$'
+AUTHOR_EMAIL_PATTERN = r'^[^@]+@[^@]+$'
 valid &= validate_parameter('Author email', AUTHOR_EMAIL_PATTERN, '{{cookiecutter.author_email}}')
 
 if not valid:
