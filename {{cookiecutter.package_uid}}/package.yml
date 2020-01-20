@@ -5,7 +5,7 @@ name: {{cookiecutter.package_name}}
 description: {{cookiecutter.package_description}}
 version: 0.1.0
 minimum_fme_build: 18482
-author: 
+author:
   name: {{cookiecutter.author}}
   email: {{cookiecutter.author_email}}
 package_content:
@@ -13,4 +13,4 @@ package_content:
     - name: {{cookiecutter.transformer_name}}
       version: 1
   python_packages:
-    - name: {{cookiecutter.python_module}}
+    - name: {{cookiecutter.python_package}}

@@ -26,5 +26,7 @@
     ],
     "transformer_name": "MyGreeter",
     "transformer_file_name": "{{cookiecutter.transformer_name|lower}}",
-    "python_module": "fmepy_{{cookiecutter.transformer_file_name}}"
+    "python_module_prefix": "fme",
+    "python_package": "{{cookiecutter.python_module_prefix}}-{{cookiecutter.transformer_file_name}}",
+    "python_module": "{{cookiecutter.python_module_prefix}}py_{{cookiecutter.transformer_file_name}}"
 }

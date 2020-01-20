@@ -28,6 +28,14 @@ TRANSFORMER_FILE_NAME_PATTERN = r'^[a-z0-9_]+$'
 valid &= validate_parameter('Transformer file name', TRANSFORMER_FILE_NAME_PATTERN,
                             '{{cookiecutter.transformer_file_name}}')
 
+PYTHON_MODULE_PREFIX_PATTERN = r'^[a-z0-9]+$'
+valid &= validate_parameter('Python module prefix', PYTHON_MODULE_PREFIX_PATTERN,
+                            '{{cookiecutter.python_module_prefix}}')
+
+PYTHON_PACKAGE_PATTERN = r'^[A-Za-z0-9-_]+$'
+valid &= validate_parameter('Python package name', PYTHON_PACKAGE_PATTERN,
+                            '{{cookiecutter.python_package}}')
+
 PYTHON_MODULE_PATTERN = r'^[A-Za-z0-9_]+$'
 valid &= validate_parameter('Python module name', PYTHON_MODULE_PATTERN,
                             '{{cookiecutter.python_module}}')
