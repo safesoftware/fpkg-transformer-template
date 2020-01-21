@@ -4,7 +4,7 @@ TRANSFORMER_NAME: {{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}.{{
 
 VERSION: 1
 
-ALIASES: 
+ALIASES:
 
 VISIBLE: yes
 
@@ -50,7 +50,7 @@ FACTORY_DEF * PythonFactory
     FACTORY_NAME $(XFORMER_NAME)_CALLER
     INPUT FEATURE_TYPE $(XFORMER_NAME)_READY
     PYTHON_NAMESPACE FMEOBJECTS
-    SYMBOL_NAME {{cookiecutter.python_module}}.{{cookiecutter.transformer_name}}
+    SYMBOL_NAME {{cookiecutter.python_module}}.{{cookiecutter.transformer_file_name}}.{{cookiecutter.transformer_name}}
     OUTPUT PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_PROCESSED
 
 FACTORY_DEF * TestFactory
