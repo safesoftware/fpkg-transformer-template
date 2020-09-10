@@ -40,29 +40,30 @@ CHANGE_LOG_END
 
 TEMPLATE_START
 
-FACTORY_DEF * TeeFactory
-   FACTORY_NAME $(XFORMER_NAME)_CATCHER
+FACTORY_DEF {*} TeeFactory
+   FACTORY_NAME { $(XFORMER_NAME)_CATCHER }
    $(INPUT_LINES)
-   OUTPUT FEATURE_TYPE $(XFORMER_NAME)_READY
+   OUTPUT { FEATURE_TYPE $(XFORMER_NAME)_READY
       @RenameAttributes(FME_STRICT,___fme_rejection_code___,fme_rejection_code)
       __xformer_first_name "$(FIRST_NAME)"
+   }
 
-FACTORY_DEF * PythonFactory
-    FACTORY_NAME $(XFORMER_NAME)_CALLER
-    INPUT FEATURE_TYPE $(XFORMER_NAME)_READY
+FACTORY_DEF {*} PythonFactory
+    FACTORY_NAME { $(XFORMER_NAME)_CALLER }
+    INPUT { FEATURE_TYPE $(XFORMER_NAME)_READY }
     PYTHON_NAMESPACE FMEOBJECTS
     SYMBOL_NAME {{cookiecutter.python_module}}.{{cookiecutter.transformer_file_name}}.{{cookiecutter.transformer_name}}
-    OUTPUT PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_PROCESSED
+    OUTPUT { PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_PROCESSED }
 
-FACTORY_DEF * TestFactory
-    FACTORY_NAME $(XFORMER_NAME)_ROUTER
-    INPUT FEATURE_TYPE $(XFORMER_NAME)_PROCESSED
+FACTORY_DEF {*} TestFactory
+    FACTORY_NAME { $(XFORMER_NAME)_ROUTER }
+    INPUT { FEATURE_TYPE $(XFORMER_NAME)_PROCESSED }
     TEST &fme_rejection_code == ""
-    OUTPUT PASSED FEATURE_TYPE $(OUTPUT_Output_FTYPE)
+    OUTPUT { PASSED FEATURE_TYPE $(OUTPUT_Output_FTYPE)
         @RenameAttributes(FME_STRICT,fme_rejection_code,___fme_rejection_code___)
-        $(OUTPUT_Output_FUNCS)
-    OUTPUT FAILED FEATURE_TYPE $(OUTPUT_<REJECTED>_FTYPE)
+        $(OUTPUT_Output_FUNCS) }
+    OUTPUT { FAILED FEATURE_TYPE $(OUTPUT_<REJECTED>_FTYPE)
         @RemoveAttributes(___fme_rejection_code___)
-        $(OUTPUT_<REJECTED>_FUNCS)
+        $(OUTPUT_<REJECTED>_FUNCS) }
 
 TEMPLATE_END
