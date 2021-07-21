@@ -24,7 +24,7 @@ class {{cookiecutter.transformer_name}}(object):
 
     def input(self, feature):
         first_name = feature.getAttribute('__xformer_first_name')
-        feature.setAttribute('greeting', 'Hello, {}!'.format(first_name))
+        feature.setAttribute('_greeting', 'Hello, {}!'.format(first_name))
         self.pyoutput(feature)
 
     def pyoutput(self, feature):
