@@ -16,7 +16,7 @@ $ pip install cookiecutter
 Then, tell Cookiecutter to load this template:
 
 ```
-$ cookiecutter http://gtb-1.safe.internal/clam/fpkg-transformer-template.git
+$ cookiecutter https://github.com/safesoftware/fpkg-transformer-template.git
 ```
 
 You'll be prompted to enter a series of values to fill in the template.
@@ -48,7 +48,5 @@ If all default parameters of the template were accepted, this results in:
 FME works with .fpkg distributions instead of FME Package directories.
 There are two ways to create an .fpkg file:
 
-1) **Recommended:** Use the [**fpkgr**](http://gtb-1.safe.internal/clam/fpkgr) tool. 
-   It helps ensure that the resulting fpkg is valid.
-2) Make a ZIP archive of the contents of the FME Package directory,
+1) Make a ZIP archive of the contents of the FME Package directory,
    and then change its extension to fpkg.
