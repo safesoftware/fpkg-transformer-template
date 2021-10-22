@@ -16,7 +16,7 @@ $ pip install cookiecutter
 Then, tell Cookiecutter to load this template:
 
 ```
-$ cookiecutter http://gtb-1.safe.internal/clam/fpkg-transformer-template.git
+$ cookiecutter https://github.com/safesoftware/fpkg-transformer-template.git
 ```
 
 You'll be prompted to enter a series of values to fill in the template.
