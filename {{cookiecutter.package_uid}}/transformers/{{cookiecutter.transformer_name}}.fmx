@@ -8,6 +8,8 @@ ALIASES:
 
 VISIBLE: yes
 
+PYTHON_COMPATIBILITY: 36
+
 CATEGORY: {{cookiecutter.transformer_category}}
 
 INPUT_TAGS: <BLANK>
