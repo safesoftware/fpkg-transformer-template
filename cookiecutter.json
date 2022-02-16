@@ -4,7 +4,7 @@
     "fme_hub_url": "https://hub.safe.com/publishers/{{cookiecutter.publisher_uid}}/packages/{{cookiecutter.package_uid}}",
     "package_name": "My FME Package",
     "package_description": "A short description of my FME Package.",
-    "author": "G Raymond",
+    "author": "FME Lizard",
     "author_email": "me@example.com",
     "transformer_category": [
         "Integrations",
