@@ -31,8 +31,6 @@ def test_greeting():
 
     # There should be only 1 output feature,
     # with the expected greeting attribute and value.
-    # The internal attribute should not be present.
     assert len(transformer.out_features) == 1
     out_feature = transformer.out_features[0]
     assert out_feature.getAttribute("_greeting") == "Hello, World!"
-    assert out_feature.isAttributeMissing("__xformer_first_name")
