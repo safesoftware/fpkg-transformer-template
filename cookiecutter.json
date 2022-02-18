@@ -1,7 +1,7 @@
 {
     "package_uid": "my-package",
     "publisher_uid": "example",
-    "fme_hub_url": "https://hub.safe.com/publishers/{{cookiecutter.publisher_uid}}/packages/{{cookiecutter.package_uid}}",
+    "package_url": "https://hub.safe.com/publishers/{{cookiecutter.publisher_uid}}/packages/{{cookiecutter.package_uid}}",
     "package_name": "My FME Package",
     "package_description": "A short description of my FME Package.",
     "author": "FME Lizard",
@@ -25,8 +25,6 @@
         "3D"
     ],
     "transformer_name": "MyGreeter",
-    "transformer_file_name": "{{cookiecutter.transformer_name|lower}}",
-    "python_module_prefix": "fme",
-    "python_package": "{{cookiecutter.python_module_prefix}}-{{cookiecutter.transformer_file_name}}",
-    "python_module": "{{cookiecutter.python_module_prefix}}py_{{cookiecutter.transformer_file_name}}"
+    "python_filename": "{{cookiecutter.transformer_name|lower}}",
+    "python_module": "fme_{{cookiecutter.transformer_name|lower}}"
 }
