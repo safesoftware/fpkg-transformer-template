@@ -42,6 +42,7 @@ CHANGE_LOG_END
 
 TEMPLATE_START
 
+# Put config values onto input feature as internal-prefixed attributes.
 FACTORY_DEF {*} TeeFactory
    FACTORY_NAME { $(XFORMER_NAME)_CATCHER }
    $(INPUT_LINES)
@@ -50,6 +51,7 @@ FACTORY_DEF {*} TeeFactory
       __xformer_first_name "$(FIRST_NAME)"
    }
 
+# Pass input feature to Python.
 FACTORY_DEF {*} PythonFactory
     FACTORY_NAME { $(XFORMER_NAME)_CALLER }
     INPUT { FEATURE_TYPE $(XFORMER_NAME)_READY }
@@ -57,6 +59,8 @@ FACTORY_DEF {*} PythonFactory
     SYMBOL_NAME {{cookiecutter.python_module}}.{{cookiecutter.python_filename}}.{{cookiecutter.transformer_name}}
     OUTPUT { PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_PROCESSED }
 
+# Removed all internal-prefixed attributes from output feature
+# and emit to the correct output port based on value of fme_rejection_code.
 FACTORY_DEF {*} TestFactory
     FACTORY_NAME { $(XFORMER_NAME)_ROUTER }
     INPUT { FEATURE_TYPE $(XFORMER_NAME)_PROCESSED }
