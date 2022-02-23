@@ -42,6 +42,7 @@ CHANGE_LOG_END
 
 TEMPLATE_START
 
+# Put config values onto input feature as internal-prefixed attributes.
 FACTORY_DEF {*} TeeFactory
    FACTORY_NAME { $(XFORMER_NAME)_CATCHER }
    $(INPUT_LINES)
@@ -50,22 +51,27 @@ FACTORY_DEF {*} TeeFactory
       __xformer_first_name "$(FIRST_NAME)"
    }
 
+# Pass input feature to Python.
 FACTORY_DEF {*} PythonFactory
     FACTORY_NAME { $(XFORMER_NAME)_CALLER }
     INPUT { FEATURE_TYPE $(XFORMER_NAME)_READY }
     PYTHON_NAMESPACE FMEOBJECTS
-    SYMBOL_NAME {{cookiecutter.python_module}}.{{cookiecutter.transformer_file_name}}.{{cookiecutter.transformer_name}}
+    SYMBOL_NAME {{cookiecutter.python_module}}.{{cookiecutter.python_filename}}.{{cookiecutter.transformer_name}}
     OUTPUT { PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_PROCESSED }
 
+# Removed all internal-prefixed attributes from output feature
+# and emit to the correct output port based on value of fme_rejection_code.
 FACTORY_DEF {*} TestFactory
     FACTORY_NAME { $(XFORMER_NAME)_ROUTER }
     INPUT { FEATURE_TYPE $(XFORMER_NAME)_PROCESSED }
     TEST &fme_rejection_code == ""
     OUTPUT { PASSED FEATURE_TYPE $(OUTPUT_Output_FTYPE)
         @RenameAttributes(FME_STRICT,fme_rejection_code,___fme_rejection_code___)
+        @RemoveAttributes(fme_regexp_match,^__xformer.*$)
         $(OUTPUT_Output_FUNCS) }
     OUTPUT { FAILED FEATURE_TYPE $(OUTPUT_<REJECTED>_FTYPE)
         @RemoveAttributes(___fme_rejection_code___)
+        @RemoveAttributes(fme_regexp_match,^__xformer.*$)
         $(OUTPUT_<REJECTED>_FUNCS) }
 
 TEMPLATE_END

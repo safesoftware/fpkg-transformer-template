@@ -1,7 +1,8 @@
 # Transformer template for FME Packages
 
 This is a [Cookiecutter](https://cookiecutter.readthedocs.io) template
-for creating an FME Package containing a single Python-based transformer.
+for use with [Safe Software's FME](https://safe.com).
+This template is for an FME Package containing a single Python-based transformer.
 It prompts for some values and generates an FME Package directory structure.
 
 
@@ -45,8 +46,5 @@ If all default parameters of the template were accepted, this results in:
 
 ## Make an .fpkg
 
-FME works with .fpkg distributions instead of FME Package directories.
-There are two ways to create an .fpkg file:
-
-1) Make a ZIP archive of the contents of the FME Package directory,
-   and then change its extension to fpkg.
+FME works with .fpkg files instead of FME Package directories.
+To create an .fpkg file, use the `fme-packager` tool.

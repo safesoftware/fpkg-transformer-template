@@ -1,1 +1,1 @@
-fmx_{{cookiecutter.publisher_uid}}_{{cookiecutter.package_uid}}_{{cookiecutter.transformer_name}},/Transformers/{{cookiecutter.transformer_file_name}}-pkg.htm
+fmx_{{cookiecutter.publisher_uid}}_{{cookiecutter.package_uid}}_{{cookiecutter.transformer_name}},/Transformers/{{cookiecutter.transformer_name}}-pkg.htm
