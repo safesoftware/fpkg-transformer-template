@@ -6,8 +6,8 @@ from fmeobjects import FMEFeature
 
 class {{cookiecutter.transformer_name}}:
     """
+    This is the Python implementation of the transformer.
     Each instance of the transformer in the workspace has an instance of this class.
-    All instances are created at the beginning of the workspace translation.
     """
 
     def __init__(self):
