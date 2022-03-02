@@ -22,6 +22,7 @@ FEATURE_HOLDING: NONE
 
 ATTRIBUTES_ADDED: Output:_greeting <REJECTED>:fme_rejection_code
 
+# Group for the transformer name parameter added by FME. Required.
 PARAMETER_NAME: TRANSFORMER_GROUP
 PARAMETER_TYPE: NAMEDGROUP XFORMER_NAME
 PARAMETER_PROMPT:
@@ -32,7 +33,7 @@ PARAMETER_TYPE: NAMEDGROUP FIRST_NAME
 PARAMETER_PROMPT: Options
 PARAMETER_DEFAULT:
 
-PARAMETER_NAME: FIRST_NAME
+PARAMETER_NAME: ___XF_FIRST_NAME
 PARAMETER_TYPE: STRING_OR_ATTR_ENCODED
 PARAMETER_PROMPT: First Name
 PARAMETER_DEFAULT: World
@@ -48,7 +49,7 @@ FACTORY_DEF {*} TeeFactory
    $(INPUT_LINES)
    OUTPUT { FEATURE_TYPE $(XFORMER_NAME)_READY
       @RenameAttributes(FME_STRICT,___fme_rejection_code___,fme_rejection_code)
-      __xformer_first_name "$(FIRST_NAME)"
+      $(FME_PARM_VAL_LIST)
    }
 
 # Pass input feature to Python.
@@ -67,11 +68,11 @@ FACTORY_DEF {*} TestFactory
     TEST &fme_rejection_code == ""
     OUTPUT { PASSED FEATURE_TYPE $(OUTPUT_Output_FTYPE)
         @RenameAttributes(FME_STRICT,fme_rejection_code,___fme_rejection_code___)
-        @RemoveAttributes(fme_regexp_match,^__xformer.*$)
+        @RemoveAttributes(fme_regexp_match,^___XF_.*$)
         $(OUTPUT_Output_FUNCS) }
     OUTPUT { FAILED FEATURE_TYPE $(OUTPUT_<REJECTED>_FTYPE)
         @RemoveAttributes(___fme_rejection_code___)
-        @RemoveAttributes(fme_regexp_match,^__xformer.*$)
+        @RemoveAttributes(fme_regexp_match,^___XF_.*$)
         $(OUTPUT_<REJECTED>_FUNCS) }
 
 TEMPLATE_END
