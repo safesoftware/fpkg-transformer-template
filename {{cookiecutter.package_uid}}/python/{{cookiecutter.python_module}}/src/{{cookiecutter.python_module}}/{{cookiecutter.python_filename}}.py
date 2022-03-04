@@ -18,7 +18,7 @@ class {{cookiecutter.transformer_name}}:
         Receive an input feature.
         """
         # The FMX file supplies all parameters as attributes on the input feature.
-        first_name = feature.getAttribute("__xformer_first_name")
+        first_name = feature.getAttribute("___XF_FIRST_NAME")
 
         # Set the output attribute, and output the feature.
         feature.setAttribute("_greeting", "Hello, {}!".format(first_name))
