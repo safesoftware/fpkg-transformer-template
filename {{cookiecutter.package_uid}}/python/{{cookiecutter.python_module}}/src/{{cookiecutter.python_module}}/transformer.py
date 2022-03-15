@@ -5,14 +5,14 @@ from fmeobjects import FMEFeature
 from ._vendor.fmetools.plugins import FMEEnhancedTransformer
 
 
-class {{cookiecutter.transformer_name}}(FMEEnhancedTransformer):
+class TransformerImpl(FMEEnhancedTransformer):
     """
-    This is the Python implementation of the transformer.
+    The Python implementation of the {{cookiecutter.transformer_name}} transformer.
     Each instance of the transformer in the workspace has an instance of this class.
     """
 
     def __init__(self):
-        pass
+        super(TransformerImpl, self).__init__()
 
     def input(self, feature: FMEFeature):
         """

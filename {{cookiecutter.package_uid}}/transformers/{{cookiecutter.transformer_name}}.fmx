@@ -59,7 +59,7 @@ FACTORY_DEF {*} PythonFactory
     FACTORY_NAME { $(XFORMER_NAME)_CALLER }
     INPUT { FEATURE_TYPE $(XFORMER_NAME)_READY }
     PYTHON_NAMESPACE FMEOBJECTS
-    SYMBOL_NAME {{cookiecutter.python_module}}.{{cookiecutter.python_filename}}.{{cookiecutter.transformer_name}}
+    SYMBOL_NAME {{cookiecutter.python_module}}.transformer.TransformerImpl
     OUTPUT { PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_PROCESSED }
 
 # Removed all internal-prefixed attributes from output feature

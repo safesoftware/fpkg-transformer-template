@@ -25,6 +25,5 @@
         "3D"
     ],
     "transformer_name": "MyGreeter",
-    "python_filename": "{{cookiecutter.transformer_name|lower}}",
     "python_module": "fme_{{cookiecutter.transformer_name|lower}}"
 }

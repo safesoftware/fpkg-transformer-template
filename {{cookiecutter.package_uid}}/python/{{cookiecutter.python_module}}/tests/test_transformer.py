@@ -1,8 +1,8 @@
-from {{cookiecutter.python_module}}.{{cookiecutter.python_filename}} import {{cookiecutter.transformer_name}}
+from {{cookiecutter.python_module}}.transformer import TransformerImpl
 from fmeobjects import FMEFeature
 
 
-class MockTransformer({{cookiecutter.transformer_name}}):
+class MockTransformer(TransformerImpl):
     """
     This is a subclass of the transformer under test,
     but with its pyoutput() features saved to an out_features member,
