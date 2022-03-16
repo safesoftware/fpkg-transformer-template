@@ -35,10 +35,9 @@ Inside are the contents of an FME Package, ready to be extended.
 If all default parameters of the template were accepted, this results in:
 
 * An FME Package with `publisher_uid` of `example` and `package_uid` of `my-package`.
-* A Python library named `fmepy_mygreeter`, ready for packaging as a Python Wheel.
-  It's comprised of a single module: `fmepy_mygreeter.py`.
+* A Python library named `fme_mygreeter`, ready for packaging as a Python Wheel.
 * A transformer named `MyGreeter` in the Integrations category,
-  which calls the `fmepy_mygreeter` Python module.
+  which calls the `fme_mygreeter` Python module.
   The transformer and its Python module have a simple example 
   of getting and setting attributes.
 * A placeholder `icon.png` for the package, which can be replaced or deleted.
