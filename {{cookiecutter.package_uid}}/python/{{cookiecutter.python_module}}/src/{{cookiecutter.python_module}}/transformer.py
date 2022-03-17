@@ -14,7 +14,7 @@ class TransformerImpl(FMEEnhancedTransformer):
     def __init__(self):
         super(TransformerImpl, self).__init__()
 
-    def input(self, feature: FMEFeature):
+    def receive_feature(self, feature: FMEFeature):
         """
         Receive an input feature.
         """
