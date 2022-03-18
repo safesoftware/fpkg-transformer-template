@@ -51,13 +51,12 @@ FACTORY_DEF {*} TeeFactory
    $(INPUT_LINES)
    OUTPUT { FEATURE_TYPE $(XFORMER_NAME)_READY
       @RenameAttributes(FME_STRICT,___fme_rejection_code___,fme_rejection_code)
-      ___XF_XFORMER_NAME $(XFORMER_NAME)
       $(FME_PARM_VAL_LIST)
    }
 
 # Pass input feature to Python.
 FACTORY_DEF {*} PythonFactory
-    FACTORY_NAME { $(XFORMER_NAME)_CALLER }
+    FACTORY_NAME { $(XFORMER_NAME) }
     INPUT { FEATURE_TYPE $(XFORMER_NAME)_READY }
     PYTHON_NAMESPACE FMEOBJECTS
     SYMBOL_NAME {{cookiecutter.python_module}}.transformer.TransformerImpl
