@@ -23,7 +23,7 @@ def test_greeting():
     """
     # Build an input feature with internal attribute for parameter.
     in_feature = FMEFeature()
-    in_feature.setAttribute("__xformer_first_name", "World")
+    in_feature.setAttribute("___XF_FIRST_NAME", "World")
 
     # Create the transformer and pass it the input feature.
     transformer = MockTransformer()
