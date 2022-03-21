@@ -1,19 +1,7 @@
+from unittest.mock import MagicMock
+
 from {{cookiecutter.python_module}}.transformer import TransformerImpl
 from fmeobjects import FMEFeature
-
-
-class MockTransformer(TransformerImpl):
-    """
-    This is a subclass of the transformer under test,
-    but with its pyoutput() features saved to an out_features member,
-    where they can be recovered for validation.
-    """
-    def __init__(self):
-        super().__init__()
-        self.out_features = []
-
-    def pyoutput(self, feature):
-        self.out_features.append(feature)
 
 
 def test_greeting():
@@ -25,12 +13,14 @@ def test_greeting():
     in_feature = FMEFeature()
     in_feature.setAttribute("___XF_FIRST_NAME", "World")
 
-    # Create the transformer and pass it the input feature.
-    transformer = MockTransformer()
+    # Create the transformer and capture its output features.
+    # Then pass it the input feature.
+    transformer = TransformerImpl()
+    transformer.pyoutput = MagicMock(transformer.pyoutput)
     transformer.input(in_feature)
 
     # There should be only 1 output feature,
     # with the expected greeting attribute and value.
-    assert len(transformer.out_features) == 1
-    out_feature = transformer.out_features[0]
+    assert transformer.pyoutput.call_count == 1
+    out_feature = transformer.pyoutput.call_args.args[0]
     assert out_feature.getAttribute("_greeting") == "Hello, World!"
