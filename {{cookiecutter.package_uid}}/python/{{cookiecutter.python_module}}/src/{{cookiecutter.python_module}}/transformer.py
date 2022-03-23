@@ -2,18 +2,19 @@
 {{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}.{{cookiecutter.transformer_name}} implementation.
 """
 from fmeobjects import FMEFeature
+from ._vendor.fmetools.plugins import FMEEnhancedTransformer
 
 
-class {{cookiecutter.transformer_name}}:
+class TransformerImpl(FMEEnhancedTransformer):
     """
-    This is the Python implementation of the transformer.
+    The Python implementation of the {{cookiecutter.transformer_name}} transformer.
     Each instance of the transformer in the workspace has an instance of this class.
     """
 
     def __init__(self):
-        pass
+        super(TransformerImpl, self).__init__()
 
-    def input(self, feature: FMEFeature):
+    def receive_feature(self, feature: FMEFeature):
         """
         Receive an input feature.
         """
@@ -23,10 +24,3 @@ class {{cookiecutter.transformer_name}}:
         # Set the output attribute, and output the feature.
         feature.setAttribute("_greeting", "Hello, {}!".format(first_name))
         self.pyoutput(feature)
-
-    def pyoutput(self, feature: FMEFeature):
-        """
-        Emit an output feature.
-        """
-        # Implementation is injected by FME.
-        pass
