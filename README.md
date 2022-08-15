@@ -43,6 +43,19 @@ If all default parameters of the template were accepted, this results in:
 * A placeholder `icon.png` for the package, which can be replaced or deleted.
 
 
+## Next steps
+
+1. **Install Python dev dependencies:**
+  In a terminal, navigate to the Python package directory and run `pip install -e .[dev]`.
+2. **Vendorize fmetools**: This template's Python code requires a private copy of the [fmetools] library.
+   Install it by running `python-vendorize` in the Python package directory.
+   This installs fmetools based on the settings in vendorize.toml.
+3. **Make an .fpkg:** FME Package projects need to be converted to .fpkg files for use with FME Workbench.
+   To create an .fpkg file, use the [fme-packager] tool.
+
+[fmetools]: https://pypi.org/project/fmetools/
+[fme-packager]: https://pypi.org/project/fme-packager/
+
 ## Make an .fpkg
 
 FME works with .fpkg files instead of FME Package directories.
