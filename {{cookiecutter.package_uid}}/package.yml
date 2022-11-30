@@ -7,7 +7,6 @@ version: 0.1.0
 minimum_fme_build: 22000
 author:
   name: {{cookiecutter.author}}
-  email: {{cookiecutter.author_email}}
 package_content:
   transformers:
     - name: {{cookiecutter.transformer_name}}

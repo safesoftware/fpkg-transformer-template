@@ -30,11 +30,6 @@ valid &= validate_parameter(
     "Transformer name", TRANSFORMER_PATTERN, "{{cookiecutter.transformer_name}}"
 )
 
-AUTHOR_EMAIL_PATTERN = r"^[^@]+@[^@]+$"
-valid &= validate_parameter(
-    "Author email", AUTHOR_EMAIL_PATTERN, "{{cookiecutter.author_email}}"
-)
-
 if not valid:
     print("Failed validation")
     sys.exit(1)
