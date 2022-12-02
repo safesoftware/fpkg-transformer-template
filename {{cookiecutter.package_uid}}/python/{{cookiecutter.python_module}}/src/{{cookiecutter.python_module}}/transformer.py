@@ -32,3 +32,13 @@ class TransformerImpl(FMEEnhancedTransformer):
         # Set the output attribute, and output the feature.
         feature.setAttribute("_greeting", "Hello, {}!".format(first_name))
         self.pyoutput(feature)
+
+{%- if cookiecutter.group_based_transformer %}
+
+    def process_group(self):
+        # TODO: Implement as described in overriden method's docstring
+        # Group-Based Transformers accumulate features in receive_feature().
+        # When FME calls this method, process the accumulated features, output results,
+        # and clear the accumulated features in preparation for the next group, if any.
+        pass
+{%- endif %}
