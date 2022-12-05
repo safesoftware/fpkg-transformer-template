@@ -5,7 +5,6 @@
     "package_name": "My FME Package",
     "package_description": "A short description of my FME Package.",
     "author": "FME Lizard",
-    "author_email": "me@example.com",
     "transformer_category": [
         "Integrations",
         "Web",
@@ -25,5 +24,6 @@
         "3D"
     ],
     "transformer_name": "MyGreeter",
+    "group_based_transformer": false,
     "python_module": "fme_{{cookiecutter.transformer_name|lower}}"
 }
