@@ -23,7 +23,7 @@
         "Strings",
         "3D"
     ],
-    "transformer_name": "MyGreeter",
+    "transformer_name": "DemoGreeter",
     "group_based_transformer": false,
     "python_module": "fme_{{cookiecutter.transformer_name|lower}}"
 }
