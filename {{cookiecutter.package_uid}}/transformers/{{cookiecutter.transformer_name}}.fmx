@@ -26,7 +26,7 @@ PARAMETER_TYPE: NAMEDGROUP XFORMER_NAME
 PARAMETER_PROMPT:
 PARAMETER_DEFAULT:
 
-{%- if cookiecutter.group_based_transformer %}
+{%- if cookiecutter.group_based_transformer == "y" %}
 
 # START Group By parameters
 # Affects the ordering of features passed to the transformer by FME.

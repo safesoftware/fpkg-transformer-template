@@ -24,6 +24,6 @@
         "3D"
     ],
     "transformer_name": "DemoGreeter",
-    "group_based_transformer": false,
+    "group_based_transformer": "n",
     "python_module": "fme_{{cookiecutter.transformer_name|lower}}"
 }
