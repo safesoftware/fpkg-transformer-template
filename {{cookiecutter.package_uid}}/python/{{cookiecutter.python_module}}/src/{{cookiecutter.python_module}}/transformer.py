@@ -33,7 +33,7 @@ class TransformerImpl(FMEEnhancedTransformer):
         feature.setAttribute("_greeting", "Hello, {}!".format(first_name))
         self.pyoutput(feature)
 
-{%- if cookiecutter.group_based_transformer %}
+{%- if cookiecutter.group_based_transformer == "y" %}
 
     def process_group(self):
         # TODO: Implement as described in overriden method's docstring
