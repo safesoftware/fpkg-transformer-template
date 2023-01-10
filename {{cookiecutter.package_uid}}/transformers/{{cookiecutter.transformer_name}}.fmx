@@ -33,16 +33,16 @@ PARAMETER_DEFAULT:
 # These parameters can be removed if Group By functionality is not needed.
 # See also: FMETransformer.process_group()
 PARAMETER_NAME: GROUP_PROCESSING_GROUP
-PARAMETER_TYPE: ACTIVEDISCLOSUREGROUP GROUP_BY%GROUP_BY_MODE
+PARAMETER_TYPE: ACTIVEDISCLOSUREGROUP ___XF_GROUP_BY%___XF_GROUP_BY_MODE
 PARAMETER_PROMPT: Group Processing
 PARAMETER_DEFAULT: NO
 
-PARAMETER_NAME: GROUP_BY
+PARAMETER_NAME: ___XF_GROUP_BY
 PARAMETER_TYPE: WHOLE_LINE ATTRLIST
 PARAMETER_PROMPT: Group By:
 PARAMETER_DEFAULT: <Unused>
 
-PARAMETER_NAME: GROUP_BY_MODE
+PARAMETER_NAME: ___XF_GROUP_BY_MODE
 PARAMETER_TYPE: LOOKUP_CHOICE "When All Features Received",No%"When Group Changes (Advanced)",Yes
 PARAMETER_PROMPT: Complete Groups:
 PARAMETER_DEFAULT: No
@@ -78,6 +78,10 @@ FACTORY_DEF {*} TeeFactory
 # Pass input feature to Python.
 FACTORY_DEF {*} PythonFactory
     FACTORY_NAME { $(XFORMER_NAME) }
+{%- if cookiecutter.group_based_transformer == "y" %}
+    GROUP_BY { $(___XF_GROUP_BY) }
+    FLUSH_WHEN_GROUPS_CHANGE { $(___XF_GROUP_BY_MODE) }
+{%- endif %}
     INPUT { FEATURE_TYPE $(XFORMER_NAME)_READY }
     PYTHON_NAMESPACE FMEOBJECTS
     SYMBOL_NAME {{cookiecutter.python_module}}.transformer.TransformerImpl
