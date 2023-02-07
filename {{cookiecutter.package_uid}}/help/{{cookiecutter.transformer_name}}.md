@@ -1,12 +1,20 @@
 # {{cookiecutter.transformer_name}}
-A description of the transformer.
-This first paragraph is previewed in the Quick Add dialog of FME Workbench.
+The {{cookiecutter.transformer_name}} transformer takes a first name as input,
+and outputs a greeting for that person.
+
+[//]: # (If the user has the package installed, then the first paragraph above)
+[//]: # (is shown when the transformer is selected in the Quick Add pane of FME Workbench.)
+[//]: # (The rest of this file is the main documentation for the transformer)
+[//]: # (and should fully describe its functionality and parameters.)
+
+This transformer is part of the FME Package
+[{{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}]({{cookiecutter.package_url}}).
 
 ## Typical uses
-Displays "Hello, `FIRST_NAME`!"
+To set an attribute that contains a customizable greeting.
 
 ## How does it work?
-Description of how the transformer works.
+Sets an attribute named `_greeting` with a value of `Hello, [FIRST NAME]!`.
 
 ## Configuration
 ### Input Ports
@@ -14,7 +22,7 @@ Description of how the transformer works.
 This transformer accepts any feature.
 ### Output Ports
 #### Output
-- **_greeting:** Output greeting with the specified name.
+- **_greeting:** The greeting based on the given parameters.
 
 #### <Rejected>
 Features that cause the operation to fail are output through this port.
@@ -23,7 +31,7 @@ which specify the reason for the failure.
 
 **Note:** If the input feature has an existing value for `fme_rejection_code`, the value will be removed.
 
-**Rejected Feature Handling:** Ban be set to either terminate the translation or
+**Rejected Feature Handling:** Can be set to either terminate the translation or
 continue running when it encounters a rejected feature.
 This setting is available both as a default [FME option](https://docs.safe.com/fme/html/FME_Desktop_Documentation/FME_Workbench/Workbench/options_workspace_defaults.htm)
 and as a [workspace parameter](https://docs.safe.com/fme/html/FME_Desktop_Documentation/FME_Workbench/Workbench/workspace_parameters.htm).
