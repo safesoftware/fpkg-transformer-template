@@ -3,14 +3,7 @@
 """
 from fmeobjects import FMEFeature
 from ._vendor.fmetools.plugins import FMEEnhancedTransformer
-from ._vendor.fmetools.guiparams import GuiParameterParser
-
-
-# Build a parser for getting GUI parameter values from input features.
-# It takes a mapping of the internal attribute name to the GUI type supplying its value.
-param_parser = GuiParameterParser({
-    "___XF_FIRST_NAME": "STRING_OR_ATTR_ENCODED",
-})
+from ._vendor.fmetools.paramparsing import TransformerParameterParser
 
 
 class TransformerImpl(FMEEnhancedTransformer):
@@ -21,13 +14,18 @@ class TransformerImpl(FMEEnhancedTransformer):
 
     def __init__(self):
         super(TransformerImpl, self).__init__()
+        # Load the transformer parameter definitions.
+        self.params = TransformerParameterParser("{{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}.{{cookiecutter.transformer_name}}")
 
     def receive_feature(self, feature: FMEFeature):
         """
         Receive an input feature.
         """
-        # Use the GUI parameter parser to get parameter from the input feature.
-        first_name = param_parser.get(feature, "___XF_FIRST_NAME")
+        # Pass internal attributes on feature into parameter parser.
+        # Then get the parsed value of the First Name parameter.
+        # By default, these methods assume a prefix of '___XF_'.
+        self.params.set_all(feature)
+        first_name = self.params.get("FIRST_NAME")
 
         # Set the output attribute, and output the feature.
         feature.setAttribute("_greeting", "Hello, {}!".format(first_name))

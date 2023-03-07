@@ -2,7 +2,8 @@
 
 This is a [Cookiecutter](https://cookiecutter.readthedocs.io) template
 for use with [Safe Software's FME](https://safe.com).
-This template is for an FME Package containing a single Python-based transformer.
+This template is for an FME Package containing a single Python-based
+transformer for FME 2023 and newer.
 It prompts for some values and generates an FME Package directory structure.
 
 
