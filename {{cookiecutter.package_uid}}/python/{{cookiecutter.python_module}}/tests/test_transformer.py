@@ -1,3 +1,6 @@
+"""
+Before running these tests, the FPKG must be installed into FME.
+"""
 from unittest.mock import MagicMock
 
 from {{cookiecutter.python_module}}.transformer import TransformerImpl
@@ -11,6 +14,7 @@ def test_greeting():
     """
     # Build an input feature with internal attribute for parameter.
     in_feature = FMEFeature()
+    in_feature.setAttribute("___XF_VERSION", "1")
     in_feature.setAttribute("___XF_FIRST_NAME", "World")
 
     # Create the transformer and capture its output features.

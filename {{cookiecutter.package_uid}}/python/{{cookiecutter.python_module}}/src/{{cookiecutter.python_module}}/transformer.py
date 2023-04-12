@@ -12,10 +12,21 @@ class TransformerImpl(FMEEnhancedTransformer):
     Each instance of the transformer in the workspace has an instance of this class.
     """
 
-    def __init__(self):
-        super(TransformerImpl, self).__init__()
-        # Load the transformer parameter definitions.
-        self.params = TransformerParameterParser("{{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}.{{cookiecutter.transformer_name}}")
+    params: TransformerParameterParser
+    version: int
+
+    def setup(self, first_feature: FMEFeature):
+        """
+        Initialization steps based the first feature received by the transformer.
+        """
+        super().setup(first_feature)
+        # Get transformer version from internal attribute on first feature,
+        # and load its parameter definitions.
+        self.version = int(first_feature.getAttribute("___XF_VERSION"))
+        self.params = TransformerParameterParser(
+            "{{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}.{{cookiecutter.transformer_name}}",
+            version=self.version,
+        )
 
     def receive_feature(self, feature: FMEFeature):
         """
