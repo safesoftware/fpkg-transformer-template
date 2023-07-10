@@ -29,7 +29,6 @@
                 "    FLUSH_WHEN_GROUPS_CHANGE { $(___XF_GROUP_BY_MODE) }",
 {%- endif %}
                 "    INPUT { FEATURE_TYPE $(XFORMER_NAME)_READY }",
-                "    PYTHON_NAMESPACE FMEOBJECTS",
                 "    SYMBOL_NAME {{cookiecutter.python_module}}.transformer.TransformerImpl",
                 "    OUTPUT { PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_PROCESSED }",
                 "",
