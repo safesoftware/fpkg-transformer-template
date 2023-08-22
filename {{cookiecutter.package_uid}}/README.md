@@ -1,4 +1,4 @@
-# {{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}
+# {{cookiecutter.package_name}} ({{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}})
 
 {{cookiecutter.package_description}}
 
