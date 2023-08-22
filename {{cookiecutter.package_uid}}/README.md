@@ -3,5 +3,3 @@
 {{cookiecutter.package_description}}
 
 This is an FME Package containing a {{cookiecutter.transformer_name}} transformer.
-
-{{cookiecutter.package_url}}

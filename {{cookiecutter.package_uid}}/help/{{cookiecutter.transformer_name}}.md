@@ -7,8 +7,7 @@ and outputs a greeting for that person.
 [//]: # (The rest of this file is the main documentation for the transformer)
 [//]: # (and should fully describe its functionality and parameters.)
 
-This transformer is part of the FME Package
-[{{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}]({{cookiecutter.package_url}}).
+This transformer is part of the FME Package `{{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}`.
 
 ## Typical uses
 To set an attribute that contains a customizable greeting.
