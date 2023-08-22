@@ -24,8 +24,5 @@
         "3D"
     ],
     "group_based_transformer": "n",
-    "python_module": "fme_{{cookiecutter.transformer_name|lower}}",
-    "_copy_without_render": [
-        "**/_vendor/*"
-    ]
+    "python_module": "fme_{{cookiecutter.transformer_name|lower}}"
 }
