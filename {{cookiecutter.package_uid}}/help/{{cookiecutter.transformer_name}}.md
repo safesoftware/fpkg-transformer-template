@@ -2,9 +2,7 @@
 The {{cookiecutter.transformer_name}} transformer takes a first name as input,
 and outputs a greeting for that person.
 
-[//]: # (If the user has the package installed, then the first paragraph above)
-[//]: # (is shown when the transformer is selected in the Quick Add pane of FME Workbench.)
-[//]: # (The rest of this file is the main documentation for the transformer)
+[//]: # (This file is the main documentation for the transformer)
 [//]: # (and should fully describe its functionality and parameters.)
 
 This transformer is part of the FME Package `{{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}`.
