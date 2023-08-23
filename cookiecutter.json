@@ -2,7 +2,6 @@
     "publisher_uid": "example",
     "package_uid": "my-package",
     "transformer_name": "DemoGreeter",
-    "package_url": "https://hub.safe.com/publishers/{{cookiecutter.publisher_uid}}/packages/{{cookiecutter.package_uid}}",
     "package_name": "My FME Package",
     "package_description": "A short description of my FME Package.",
     "author": "FME Lizard",
@@ -25,8 +24,5 @@
         "3D"
     ],
     "group_based_transformer": "n",
-    "python_module": "fme_{{cookiecutter.transformer_name|lower}}",
-    "_copy_without_render": [
-        "**/_vendor/*"
-    ]
+    "python_module": "fme_{{cookiecutter.transformer_name|lower}}"
 }
