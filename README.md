@@ -7,7 +7,7 @@ transformer for FME 2023 and newer.
 It prompts for some values and generates an FME Package directory structure.
 
 Note that while this template specifies a `minimum_fme_build` of 23224,
-build 24145 or newer is required when running on FME Flow.
+build 24145 or newer is required to support running on FME Flow.
 
 ## Usage
 
