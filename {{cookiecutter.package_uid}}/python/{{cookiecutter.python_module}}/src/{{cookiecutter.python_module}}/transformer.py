@@ -22,6 +22,7 @@ class TransformerImpl(FMEEnhancedTransformer):
         super().setup(first_feature)
         # Get transformer version from internal attribute on first feature,
         # and load its parameter definitions.
+        # Note: TransformerParameterParser requires >=b24145 when running on FME Flow.
         self.version = int(first_feature.getAttribute("___XF_VERSION"))
         self.params = TransformerParameterParser(
             "{{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}.{{cookiecutter.transformer_name}}",
