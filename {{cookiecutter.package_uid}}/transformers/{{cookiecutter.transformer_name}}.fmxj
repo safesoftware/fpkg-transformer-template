@@ -42,10 +42,10 @@
                 "        @RenameAttributes(FME_STRICT,fme_rejection_code,___fme_rejection_code___)",
                 "        @RemoveAttributes(fme_regexp_match,^___XF_.*$)",
                 "        $(OUTPUT_Output_FUNCS) }",
-                "    OUTPUT { FAILED FEATURE_TYPE $(OUTPUT_<REJECTED>_FTYPE)",
+                "    OUTPUT { FAILED FEATURE_TYPE $(OUTPUT_<Rejected>_FTYPE)",
                 "        @RemoveAttributes(___fme_rejection_code___)",
                 "        @RemoveAttributes(fme_regexp_match,^___XF_.*$)",
-                "        $(OUTPUT_<REJECTED>_FUNCS) }"
+                "        $(OUTPUT_<Rejected>_FUNCS) }"
             ],
             "featureHolding": "none",
             "form": {
@@ -153,7 +153,7 @@
                             "type": "buffer"
                         }
                     ],
-                    "name": "<REJECTED>"
+                    "name": "<Rejected>"
                 }
             ],
             "upgradeWarning": "",
