@@ -16,7 +16,9 @@
                 "   FACTORY_NAME { $(XFORMER_NAME)_CATCHER }",
                 "   $(INPUT_LINES)",
                 "   OUTPUT { FEATURE_TYPE $(XFORMER_NAME)_READY",
+{%- if cookiecutter.group_based_transformer == "2023" %}
                 "      @RenameAttributes(FME_STRICT,___fme_rejection_code___,fme_rejection_code)",
+{%- endif %}
                 "      @SupplyAttributes(___XF_VERSION, 1)",
                 "      $(FME_PARM_VAL_LIST)",
                 "   }",
@@ -30,6 +32,7 @@
 {%- endif %}
                 "    INPUT { FEATURE_TYPE $(XFORMER_NAME)_READY }",
                 "    SYMBOL_NAME {{cookiecutter.python_module}}.transformer.TransformerImpl",
+{%- if cookiecutter.minimum_supported_fme == "2023" %}
                 "    OUTPUT { PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_PROCESSED }",
                 "",
                 "# Removed all internal-prefixed attributes from output feature",
@@ -46,6 +49,15 @@
                 "        @RemoveAttributes(___fme_rejection_code___)",
                 "        @RemoveAttributes(fme_regexp_match,^___XF_.*$)",
                 "        $(OUTPUT_<Rejected>_FUNCS) }"
+{%- else %}
+                "	PY_OUTPUT_TAGS { Output <Rejected> }",
+                "	OUTPUT { Output FEATURE_TYPE $(OUTPUT_Output_FTYPE)",
+                "	    @RemoveAttributes(fme_regexp_match,^___XF_.*$)",
+                "	    $(OUTPUT_Output_FUNCS) }",
+                "	OUTPUT { <Rejected> FEATURE_TYPE $(OUTPUT_<Rejected>_FTYPE)",
+                "	    @RemoveAttributes(fme_regexp_match,^___XF_.*$)",
+                "	    $(OUTPUT_<Rejected>_FUNCS) }",
+{%- endif %}
             ],
             "featureHolding": "none",
             "form": {

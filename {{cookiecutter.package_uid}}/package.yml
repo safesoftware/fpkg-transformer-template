@@ -4,7 +4,11 @@ publisher_uid: {{cookiecutter.publisher_uid}}
 name: {{cookiecutter.package_name}}
 description: {{cookiecutter.package_description}}
 version: 0.1.0
+{%- if cookiecutter.minimum_supported_fme == "2023" %}
 minimum_fme_build: 23224
+{%- else %}
+minimum_fme_build: 24158
+{%- endif %}
 author:
   name: {{cookiecutter.author}}
 package_content:
