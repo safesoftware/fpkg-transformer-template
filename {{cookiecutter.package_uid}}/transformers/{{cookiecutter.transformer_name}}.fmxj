@@ -50,13 +50,13 @@
                 "        @RemoveAttributes(fme_regexp_match,^___XF_.*$)",
                 "        $(OUTPUT_<Rejected>_FUNCS) }"
 {%- else %}
-                "	PY_OUTPUT_TAGS { Output <Rejected> }",
-                "	OUTPUT { Output FEATURE_TYPE $(OUTPUT_Output_FTYPE)",
-                "	    @RemoveAttributes(fme_regexp_match,^___XF_.*$)",
-                "	    $(OUTPUT_Output_FUNCS) }",
-                "	OUTPUT { <Rejected> FEATURE_TYPE $(OUTPUT_<Rejected>_FTYPE)",
-                "	    @RemoveAttributes(fme_regexp_match,^___XF_.*$)",
-                "	    $(OUTPUT_<Rejected>_FUNCS) }",
+                "    PY_OUTPUT_TAGS { Output <Rejected> }",
+                "    OUTPUT { Output FEATURE_TYPE $(OUTPUT_Output_FTYPE)",
+                "        @RemoveAttributes(fme_regexp_match,^___XF_.*$)",
+                "        $(OUTPUT_Output_FUNCS) }",
+                "    OUTPUT { <Rejected> FEATURE_TYPE $(OUTPUT_<Rejected>_FTYPE)",
+                "        @RemoveAttributes(fme_regexp_match,^___XF_.*$)",
+                "        $(OUTPUT_<Rejected>_FUNCS) }"
 {%- endif %}
             ],
             "featureHolding": "none",
