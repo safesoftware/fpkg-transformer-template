@@ -1,4 +1,4 @@
 target = "src/{{cookiecutter.python_module}}/_vendor"
 packages = [
-    "fmetools>=0.7.3",
+    "fmetools>=0.9.0",
 ]
