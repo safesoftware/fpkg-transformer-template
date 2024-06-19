@@ -24,6 +24,9 @@
                 "   }",
                 "",
                 "# Pass input feature to Python.",
+{%- if cookiecutter.minimum_supported_fme != "2023" %}
+                "# Remove all internal-prefixed attributes before emitting output feature",
+{%- endif %}
                 "FACTORY_DEF {*} PythonFactory",
                 "    FACTORY_NAME { $(XFORMER_NAME) }",
 {%- if cookiecutter.group_based_transformer == "y" %}
@@ -35,7 +38,7 @@
 {%- if cookiecutter.minimum_supported_fme == "2023" %}
                 "    OUTPUT { PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_PROCESSED }",
                 "",
-                "# Removed all internal-prefixed attributes from output feature",
+                "# Remove all internal-prefixed attributes from output feature",
                 "# and emit to the correct output port based on value of fme_rejection_code.",
                 "FACTORY_DEF {*} TestFactory",
                 "    FACTORY_NAME { $(XFORMER_NAME)_ROUTER }",
