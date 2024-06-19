@@ -25,7 +25,8 @@
                 "",
                 "# Pass input feature to Python.",
 {%- if cookiecutter.minimum_supported_fme != "2023" %}
-                "# Remove all internal-prefixed attributes before emitting output feature",
+                "# Remove all internal-prefixed attributes before emitting feature",
+                "# through the correct output port.",
 {%- endif %}
                 "FACTORY_DEF {*} PythonFactory",
                 "    FACTORY_NAME { $(XFORMER_NAME) }",
