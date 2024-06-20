@@ -41,7 +41,13 @@ class TransformerImpl(FMEEnhancedTransformer):
 
         # Set the output attribute, and output the feature.
         feature.setAttribute("_greeting", "Hello, {}!".format(first_name))
+
+{%- if cookiecutter.minimum_supported_fme == "2023" %}
         self.pyoutput(feature)
+{%- else %}
+        self.pyoutput(feature, output_tag="Output")
+{%- endif %}
+
 
 {%- if cookiecutter.group_based_transformer == "y" %}
 

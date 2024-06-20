@@ -24,5 +24,6 @@
         "3D"
     ],
     "group_based_transformer": "n",
-    "python_module": "fme_{{cookiecutter.transformer_name|lower}}"
+    "python_module": "fme_{{cookiecutter.transformer_name|lower}}",
+    "minimum_supported_fme": ["2024", "2023"]
 }
