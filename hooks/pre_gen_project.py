@@ -7,11 +7,7 @@ import sys
 
 def validate_parameter(parameter, regex_pattern, parameter_value):
     if not re.match(regex_pattern, parameter_value):
-        print(
-            "{name} needs to match {pattern}".format(
-                name=parameter, pattern=regex_pattern
-            )
-        )
+        print(f"Parameter {parameter} ({parameter_value}) must match {regex_pattern}")
         return False
     return True
 
