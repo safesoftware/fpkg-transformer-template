@@ -7,12 +7,12 @@
     "author": "FME Lizard",
     "transformer_category": [
         "Integrations",
-        "Web",
-        "Workflows",
+        "3D",
         "Attributes",
         "Calculated Values",
         "Cartography and Reports",
         "Coordinates",
+        "Database",
         "Data Quality",
         "Filters and Joins",
         "Format Specific",
@@ -21,7 +21,8 @@
         "Rasters",
         "Spatial Analysis",
         "Strings",
-        "3D"
+        "Web",
+        "Workflows"
     ],
     "group_based_transformer": "n",
     "python_module": "fme_{{cookiecutter.transformer_name|lower}}",
