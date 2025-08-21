@@ -27,8 +27,9 @@
     "group_based_transformer": "n",
     "python_module": "fme_{{cookiecutter.transformer_name|lower}}",
     "minimum_supported_fme": [
+      "2025",
       "2024",
       "2023"
     ],
-    "__minimum_fme_build": "{{ {'2023': 23224, '2024': 24158}[cookiecutter.minimum_supported_fme] }}"
+    "__minimum_fme_build": "{{ {'2023': 23224, '2024': 24158, '2025': 25208}[cookiecutter.minimum_supported_fme] }}"
 }
