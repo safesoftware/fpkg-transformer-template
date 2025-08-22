@@ -4,3 +4,32 @@ requires = [
     "wheel"
 ]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{cookiecutter.python_module}}"
+dynamic = ["version"]
+authors = [
+    { name = "{{cookiecutter.author}}" },
+]
+description = "Code for the {{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}.{{cookiecutter.transformer_name}} transformer in FME"
+readme = "README.md"
+keywords = ["fme", "fmepy", "package"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Framework :: FME",
+    "Private :: Do Not Upload",
+]
+requires-python = ">=3.7"
+
+[project.optional-dependencies]
+dev = [
+    "vendorize",
+    "pytest",
+    "black~=22.1.0",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "{{cookiecutter.python_module}}.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
