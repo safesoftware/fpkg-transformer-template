@@ -19,7 +19,7 @@ classifiers = [
     "Framework :: FME",
     "Private :: Do Not Upload",
 ]
-requires-python = ">=3.7"
+requires-python = ">={{cookiecutter.__minimum_py_ver}}"
 
 [project.optional-dependencies]
 dev = [
