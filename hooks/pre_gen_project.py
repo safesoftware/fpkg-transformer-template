@@ -5,6 +5,10 @@ import re
 import sys
 
 
+{{cookiecutter.update({"package_uid": cookiecutter.package_uid.lower()})}}
+{{cookiecutter.update({"publisher_uid": cookiecutter.publisher_uid.lower()})}}
+
+
 def validate_parameter(parameter, regex_pattern, parameter_value):
     if not re.match(regex_pattern, parameter_value):
         print(f"Parameter {parameter} ({parameter_value}) must match {regex_pattern}")
