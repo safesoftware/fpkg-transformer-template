@@ -47,12 +47,14 @@ class TransformerImpl(FMEEnhancedTransformer):
 {%- else %}
         self.pyoutput(feature, output_tag="Output")
 {%- endif %}
+        # Warning: do not save features or access them after pyoutput()
+        # See FMEEnhancedTransformer.has_support_for() for details.
 
 
 {%- if cookiecutter.group_based_transformer == "y" %}
 
     def process_group(self):
-        # TODO: Implement as described in overriden method's docstring
+        # TODO: Implement as described in overridden method's docstring
         # Group-Based Transformers accumulate features in receive_feature().
         # When FME calls this method, process the accumulated features, output results,
         # and clear the accumulated features in preparation for the next group, if any.

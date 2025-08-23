@@ -49,7 +49,7 @@ If all default parameters of the template were accepted, this results in:
 ## Next steps
 
 1. **Install Python dev dependencies:**
-  In a terminal, navigate to the Python package directory and run `pip install -e .[dev]`.
+  In a terminal, navigate to the Python package directory and run `pip install -e '.[dev]'`.
 2. **Vendorize fmetools**: This template's Python code requires a private copy of the [fmetools] library.
    Install it by running `python-vendorize` in the Python package directory.
    This installs fmetools based on the settings in vendorize.toml.

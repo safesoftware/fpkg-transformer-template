@@ -1,6 +1,35 @@
 [build-system]
 requires = [
-    "setuptools>=42",
-    "wheel"
+    "setuptools>=68.0.0",
+    "wheel>=0.42.0",
 ]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{cookiecutter.python_module}}"
+dynamic = ["version"]
+authors = [
+    { name = "{{cookiecutter.author}}" },
+]
+description = "Code for the {{cookiecutter.publisher_uid}}.{{cookiecutter.package_uid}}.{{cookiecutter.transformer_name}} transformer in FME"
+readme = "README.md"
+keywords = ["fme", "fmepy", "package"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Framework :: FME",
+    "Private :: Do Not Upload",
+]
+requires-python = ">={{cookiecutter.__minimum_py_ver}}"
+
+[project.optional-dependencies]
+dev = [
+    "vendorize>=0.3.0",
+    "pytest>=7.4.4",
+    "black>=23.3.0",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "{{cookiecutter.python_module}}.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
